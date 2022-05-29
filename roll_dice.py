@@ -1,3 +1,4 @@
+from ftplib import all_errors
 import random
 
 DICE_ART = {
@@ -107,9 +108,23 @@ def generate_dice_faces_diagram(dice_values):
     return dice_faces_diagram
 
 
-
-num_dice_input = input("How many dice would you like to roll?[1-6] ")
-num_dice = parse_input(num_dice_input)
-roll_results = roll_dice(num_dice)
-dice_face_diagram = generate_dice_faces_diagram(roll_results)
-print(f"\n{dice_face_diagram}")
+def all_functions():
+    num_dice_input = input("How many dice would you like to roll?[1-6] ")
+    num_dice = parse_input(num_dice_input)
+    roll_results = roll_dice(num_dice)
+    dice_face_diagram = generate_dice_faces_diagram(roll_results)
+    print(f"\n{dice_face_diagram}")
+    print(f"\nYou rolled {num_dice} dice and got {sum(roll_results)}")
+    return 
+all_functions()
+roll_again = input("Do you want to roll again?(y/n) ")
+while roll_again == "y":
+    if roll_again == "y":
+        all_functions()
+        roll_again = input("Do you want to roll again?(y/n) ")
+        
+ 
+input("\nPress Enter to exit.")
+print("\nThanks for playing!")
+ 
+        
