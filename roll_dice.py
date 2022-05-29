@@ -27,4 +27,4 @@ def parse_input(input_string):
         print('Please enter a number from 1 to 6.')
         raise SystemExit
 
-parse_input(6)
+parse_input("6")
