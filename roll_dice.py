@@ -86,6 +86,24 @@ def roll_dice(num_dice):
 
 
 
+def display_dice(dice_values):
+    dice_faces = []
+    for value in dice_values:
+        dice_faces.append(DICE_ART[value])
+    
+    dice_faces_rows = []
+    for row_idx in range(DIE_HEIGHT):
+        row_components = []
+        for die in dice_faces:
+            row_components.append(die[row_idx])
+        row_string = DIE_FACE_SEPARATOR.join(row_components)
+        dice_faces_rows.append(row_string)
+
+    width = len(dice_faces_rows[0])
+    diagram_header = "RESULTS " .center(width, "=")
+
+    dice_faces_diagram = "/n".join[diagram_header] + dice_faces_rows
+
 
 
 num_dice_input = input("How many dice would you like to roll?[1-6] ")
