@@ -124,7 +124,7 @@ while roll_again == "y":
         roll_again = input("Do you want to roll again?(y/n) ")
         
  
-input("\nPress Enter to exit.")
-print("\nThanks for playing!")
+    input("\nPress Enter to exit.")
+    print("\nThanks for playing!")
  
         
