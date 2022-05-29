@@ -1,18 +1,11 @@
-# try:
-#     num_dice_input = input("How many dice would you like to roll?[1-6] ")
-#     num_dice = int(num_dice_input)
-#     print(num_dice)
-# except ValueError:
-#     print("Please enter a number from 1 to 6.")
-
 def parse_input(input_string):
     """
-    Returns 'inout_string' as an interger between 1 and 6.
+    Returns 'input_string' as an interger between 1 and 6.
 
     Check if 'input_string' is an integer number between 1 and 6.
     If so, return an interger with the same value. Otherwise, tell the user to enter a valid number and quit the program.
     """
-    
+  
 
     try:
         input_int = int(input_string)
@@ -24,7 +17,11 @@ def parse_input(input_string):
         else:
             return input_int
     except ValueError:
-        print('Please enter a number from 1 to 6.')
+        print('Please enter a valid number.')
         raise SystemExit
 
-parse_input("6")
+
+
+num_dice_input = input("How many dice would you like to roll?[1-6] ")
+num_dice = parse_input(num_dice_input)
+print(num_dice)
