@@ -16,7 +16,7 @@ def parse_input(input_string):
             print("Please enter a number from 1 to 6.")
             quit()
         elif 1 <= input_int <= 6:
-            print(input_int)
+            return input_int
         else:
             return input_int
     except ValueError:
@@ -25,14 +25,17 @@ def parse_input(input_string):
 
 
 
-num_dice_input = input("How many dice would you like to roll?[1-6] ")
-num_dice = parse_input(num_dice_input)
-print(num_dice)
 
 
 def roll_dice(num_dice):
     roll_results = []
-    for _ in range(num_dice):
-        roll = random.randint(1, 6)
-        roll_results.append(roll)
-    return roll_results
+    if num_dice is not None:
+        for _ in range(num_dice):
+            roll = random.randint(1, 6)
+            roll_results.append(roll)
+        return roll_results
+
+
+num_dice_input = input("How many dice would you like to roll?[1-6] ")
+num_dice = parse_input(num_dice_input)
+roll_results = roll_dice(num_dice)
