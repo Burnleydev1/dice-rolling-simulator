@@ -1,3 +1,6 @@
+import random
+
+
 def parse_input(input_string):
     """
     Returns 'input_string' as an interger between 1 and 6.
@@ -25,3 +28,11 @@ def parse_input(input_string):
 num_dice_input = input("How many dice would you like to roll?[1-6] ")
 num_dice = parse_input(num_dice_input)
 print(num_dice)
+
+
+def roll_dice(num_dice):
+    roll_results = []
+    for _ in range(num_dice):
+        roll = random.randint(1, 6)
+        roll_results.append(roll)
+    return roll_results
